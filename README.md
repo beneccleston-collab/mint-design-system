@@ -1,1 +1,1 @@
-# my-first-app
+# my-design-system
