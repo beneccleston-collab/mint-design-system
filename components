@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components - My Design System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="mobile-logo">My Design System</div>
+        <button id="mobileThemeToggle" class="mobile-theme-toggle">
+            <span class="toggle-icon">🌙</span>
+        </button>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">My Design System</div>
+            <button class="close-btn" id="closeSidebar" aria-label="Close menu">×</button>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="foundations.html">Foundations</a></li>
+            <li><a href="components.html" class="active">Components</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <button id="desktopThemeToggle" class="theme-toggle-sidebar">
+                <span class="toggle-icon">🌙</span>
+                <span class="toggle-text">Dark Mode</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <h1>Component Library</h1>
+                <p class="subtitle">Production-ready UI components built on our design foundations</p>
+            </header>
+
+            <!-- Buttons Section -->
+            <section class="section">
+                <h2 class="section-title">Buttons</h2>
+                <p class="section-description">Buttons trigger actions and guide users through interfaces.</p>
+                
+                <h3 class="subsection-title">Variants</h3>
+                <div class="component-showcase">
+                    <button class="btn btn-primary">Primary Button</button>
+                    <button class="btn btn-secondary">Secondary Button</button>
+                    <button class="btn btn-ghost">Ghost Button</button>
+                    <button class="btn btn-danger">Danger Button</button>
+                </div>
+
+                <h3 class="subsection-title">Sizes</h3>
+                <div class="component-showcase">
+                    <button class="btn btn-primary btn-sm">Small</button>
+                    <button class="btn btn-primary btn-md">Medium</button>
+                    <button class="btn btn-primary btn-lg">Large</button>
+                </div>
+
+                <h3 class="subsection-title">States</h3>
+                <div class="component-showcase">
+                    <button class="btn btn-primary">Normal</button>
+                    <button class="btn btn-primary" disabled>Disabled</button>
+                </div>
+            </section>
+
+            <!-- Inputs Section -->
+            <section class="section">
+                <h2 class="section-title">Form Inputs</h2>
+                <p class="section-description">Text inputs, textareas, and form controls for data entry.</p>
+                
+                <h3 class="subsection-title">Text Inputs</h3>
+                <div class="component-showcase vertical">
+                    <div class="form-group">
+                        <label for="input1" class="form-label">Email address</label>
+                        <input type="email" id="input1" class="form-input" placeholder="you@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="input2" class="form-label">Full name</label>
+                        <input type="text" id="input2" class="form-input" placeholder="Jane Doe" value="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="input3" class="form-label">Disabled input</label>
+                        <input type="text" id="input3" class="form-input" placeholder="Cannot edit" disabled>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">Textarea</h3>
+                <div class="component-showcase vertical">
+                    <div class="form-group">
+                        <label for="textarea1" class="form-label">Message</label>
+                        <textarea id="textarea1" class="form-textarea" rows="4" placeholder="Write your message here..."></textarea>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">Select</h3>
+                <div class="component-showcase vertical">
+                    <div class="form-group">
+                        <label for="select1" class="form-label">Country</label>
+                        <select id="select1" class="form-select">
+                            <option>United States</option>
+                            <option>United Kingdom</option>
+                            <option>Canada</option>
+                            <option>Australia</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cards Section -->
+            <section class="section">
+                <h2 class="section-title">Cards</h2>
+                <p class="section-description">Container components for grouping related content.</p>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Simple Card</h3>
+                        <p>Cards contain content and actions about a single subject. This is a basic card with just text content.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Card with Button</h3>
+                        <p>Cards can include actions like buttons or links to provide next steps for users.</p>
+                        <button class="btn btn-primary btn-sm">Learn More</button>
+                    </div>
+                    
+                    <div class="card card-interactive">
+                        <h3>Interactive Card</h3>
+                        <p>Some cards are clickable themselves, with hover states to indicate interactivity.</p>
+                        <span class="card-link">View details →</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Badges Section -->
+            <section class="section">
+                <h2 class="section-title">Badges</h2>
+                <p class="section-description">Small status indicators and labels.</p>
+                
+                <h3 class="subsection-title">Status Badges</h3>
+                <div class="component-showcase">
+                    <span class="badge badge-success">Success</span>
+                    <span class="badge badge-error">Error</span>
+                    <span class="badge badge-warning">Warning</span>
+                    <span class="badge badge-info">Info</span>
+                    <span class="badge badge-neutral">Neutral</span>
+                </div>
+
+                <h3 class="subsection-title">Sizes</h3>
+                <div class="component-showcase">
+                    <span class="badge badge-primary badge-sm">Small</span>
+                    <span class="badge badge-primary badge-md">Medium</span>
+                    <span class="badge badge-primary badge-lg">Large</span>
+                </div>
+
+                <h3 class="subsection-title">Dot Indicators</h3>
+                <div class="component-showcase">
+                    <span class="badge badge-dot badge-success">Active</span>
+                    <span class="badge badge-dot badge-error">Offline</span>
+                    <span class="badge badge-dot badge-warning">Away</span>
+                </div>
+            </section>
+
+            <!-- Alerts Section -->
+            <section class="section">
+                <h2 class="section-title">Alerts</h2>
+                <p class="section-description">Feedback messages to communicate system status.</p>
+                
+                <div class="alert-stack">
+                    <div class="alert alert-success">
+                        <strong>Success!</strong> Your changes have been saved.
+                    </div>
+                    <div class="alert alert-error">
+                        <strong>Error!</strong> Something went wrong. Please try again.
+                    </div>
+                    <div class="alert alert-warning">
+                        <strong>Warning!</strong> Your session will expire in 5 minutes.
+                    </div>
+                    <div class="alert alert-info">
+                        <strong>Info:</strong> New features are available in your dashboard.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loading Indicators -->
+            <section class="section">
+                <h2 class="section-title">Loading Indicators</h2>
+                <p class="section-description">Visual feedback for loading states.</p>
+                
+                <div class="component-showcase">
+                    <div class="spinner spinner-sm"></div>
+                    <div class="spinner spinner-md"></div>
+                    <div class="spinner spinner-lg"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
