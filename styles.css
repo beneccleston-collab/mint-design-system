@@ -1949,3 +1949,206 @@ code {
     font-size: var(--font-size-body-small);
     font-weight: var(--font-weight-medium);
 }
+
+/* ============================================
+   LOGO STYLES
+   ============================================ */
+
+/* Logo Shapes - Base */
+.logo-shapes {
+    display: flex;
+    gap: 4px;
+    align-items: flex-end;
+}
+
+.logo-square {
+    width: 20px;
+    height: 20px;
+    background: #88C7A5;
+}
+
+.logo-circle {
+    width: 20px;
+    height: 20px;
+    background: #6BAA88;
+    border-radius: 50%;
+}
+
+.logo-triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #2D3E50;
+}
+
+/* Sidebar Logo */
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+}
+
+/* Mobile Logo */
+.mobile-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+}
+
+.logo-text {
+    color: var(--color-text-primary);
+}
+
+/* Hero Logo - Large */
+.hero-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-6);
+}
+
+.logo-shapes-large {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.logo-shapes-large .logo-square {
+    width: 48px;
+    height: 48px;
+}
+
+.logo-shapes-large .logo-circle {
+    width: 48px;
+    height: 48px;
+}
+
+.logo-shapes-large .logo-triangle {
+    width: 0;
+    height: 0;
+    border-left: 24px solid transparent;
+    border-right: 24px solid transparent;
+    border-bottom: 48px solid #2D3E50;
+}
+
+/* Logo Showcase on Foundations Page */
+.logo-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+.logo-example {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.logo-preview-box {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.logo-preview-box.dark-bg {
+    background-color: #1A1F2E;
+    border-color: #3D4557;
+}
+
+.logo-full {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo-shapes-display {
+    display: flex;
+    gap: 6px;
+    align-items: flex-end;
+}
+
+.logo-shapes-display .logo-square {
+    width: 32px;
+    height: 32px;
+}
+
+.logo-shapes-display .logo-circle {
+    width: 32px;
+    height: 32px;
+}
+
+.logo-shapes-display .logo-triangle {
+    width: 0;
+    height: 0;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 32px solid #2D3E50;
+}
+
+.logo-text-display {
+    font-size: 32px;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+}
+
+.logo-text-display.light-text {
+    color: #F0F2F5;
+}
+
+/* Logo Guidelines */
+.logo-guidelines {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+}
+
+.guideline-item {
+    padding: var(--space-4);
+    background-color: var(--color-surface-secondary);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--color-primary);
+}
+
+.guideline-item h4 {
+    margin-bottom: var(--space-2);
+    font-size: var(--font-size-body);
+    color: var(--color-primary-dark);
+}
+
+.guideline-item p {
+    font-size: var(--font-size-body-small);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .logo-shapes-large .logo-square,
+    .logo-shapes-large .logo-circle {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .logo-shapes-large .logo-triangle {
+        border-left: 16px solid transparent;
+        border-right: 16px solid transparent;
+        border-bottom: 32px solid #2D3E50;
+    }
+    
+    .logo-showcase {
+        grid-template-columns: 1fr;
+    }
+}
