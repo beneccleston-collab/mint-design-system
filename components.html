@@ -23,26 +23,8 @@
         </button>
     </header>
 
-    <!-- Sidebar Navigation -->
-    <nav class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <div class="sidebar-logo">My Design System</div>
-            <button class="close-btn" id="closeSidebar" aria-label="Close menu">×</button>
-        </div>
-        
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="foundations.html">Foundations</a></li>
-            <li><a href="components.html" class="active">Components</a></li>
-        </ul>
-
-        <div class="sidebar-footer">
-            <button id="desktopThemeToggle" class="theme-toggle-sidebar">
-                <span class="toggle-icon">🌙</span>
-                <span class="toggle-text">Dark Mode</span>
-            </button>
-        </div>
-    </nav>
+    <!-- Sidebar Navigation (loaded dynamically) -->
+    <div id="nav-placeholder"></div>
 
     <!-- Overlay for mobile menu -->
     <div class="overlay" id="overlay"></div>
@@ -57,7 +39,7 @@
             </header>
 
             <!-- Buttons Section -->
-            <section class="section">
+            <section class="section" id="buttons">
                 <h2 class="section-title">Buttons</h2>
                 <p class="section-description">Buttons trigger actions and guide users through interfaces.</p>
                 
@@ -84,7 +66,7 @@
             </section>
 
             <!-- Inputs Section -->
-            <section class="section">
+            <section class="section" id="forms">
                 <h2 class="section-title">Form Inputs</h2>
                 <p class="section-description">Text inputs, textareas, and form controls for data entry.</p>
                 
@@ -127,7 +109,7 @@
             </section>
 
             <!-- Cards Section -->
-            <section class="section">
+            <section class="section" id="cards">
                 <h2 class="section-title">Cards</h2>
                 <p class="section-description">Container components for grouping related content.</p>
                 
@@ -152,7 +134,7 @@
             </section>
 
             <!-- Badges Section -->
-            <section class="section">
+            <section class="section" id="badges">
                 <h2 class="section-title">Badges</h2>
                 <p class="section-description">Small status indicators and labels.</p>
                 
@@ -181,7 +163,7 @@
             </section>
 
             <!-- Alerts Section -->
-            <section class="section">
+            <section class="section" id="alerts">
                 <h2 class="section-title">Alerts</h2>
                 <p class="section-description">Feedback messages to communicate system status.</p>
                 
@@ -202,7 +184,7 @@
             </section>
 
             <!-- Loading Indicators -->
-            <section class="section">
+            <section class="section" id="loading">
                 <h2 class="section-title">Loading Indicators</h2>
                 <p class="section-description">Visual feedback for loading states.</p>
                 
