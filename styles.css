@@ -744,6 +744,8 @@ code {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    padding-bottom: 4px;
+    line-height: 1.2;
 }
 
 .hero-subtitle {
