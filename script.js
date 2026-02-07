@@ -106,12 +106,17 @@ function initializeThemeToggle() {
     html.setAttribute('data-theme', currentTheme);
     updateToggleButtons(currentTheme);
     
-    // Desktop theme toggle
+    // Desktop theme toggle (checkbox)
     if (desktopThemeToggle) {
-        desktopThemeToggle.addEventListener('click', toggleTheme);
+        desktopThemeToggle.addEventListener('change', (e) => {
+            const newTheme = e.target.checked ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleButtons(newTheme);
+        });
     }
     
-    // Mobile theme toggle
+    // Mobile theme toggle (button)
     if (mobileThemeToggle) {
         mobileThemeToggle.addEventListener('click', toggleTheme);
     }
@@ -130,20 +135,27 @@ function toggleTheme() {
 function updateToggleButtons(theme) {
     const desktopThemeToggle = document.getElementById('desktopThemeToggle');
     const mobileThemeToggle = document.getElementById('mobileThemeToggle');
-    const buttons = [desktopThemeToggle, mobileThemeToggle].filter(Boolean);
     
-    buttons.forEach(button => {
-        const icon = button.querySelector('.toggle-icon');
-        const text = button.querySelector('.toggle-text');
-        
+    // Update desktop toggle switch
+    if (desktopThemeToggle) {
+        desktopThemeToggle.checked = theme === 'dark';
+        const themeIcon = document.querySelector('.theme-icon');
+        const themeText = document.querySelector('.theme-text');
+        if (themeIcon) {
+            themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+        }
+        if (themeText) {
+            themeText.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+        }
+    }
+    
+    // Update mobile toggle button
+    if (mobileThemeToggle) {
+        const icon = mobileThemeToggle.querySelector('.toggle-icon');
         if (icon) {
             icon.textContent = theme === 'dark' ? '☀️' : '🌙';
         }
-        
-        if (text) {
-            text.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
-        }
-    });
+    }
 }
 
 // Load navigation when page loads
