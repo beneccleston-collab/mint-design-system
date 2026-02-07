@@ -1640,3 +1640,291 @@ code {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================
+   PROGRESS BARS
+   ============================================ */
+.progress {
+    width: 100%;
+    height: 8px;
+    background-color: var(--color-gray-200);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-full);
+    transition: width 0.3s ease;
+}
+
+.progress-bar-success {
+    background-color: var(--color-success);
+}
+
+.progress-sm {
+    height: 4px;
+}
+
+.progress-lg {
+    height: 12px;
+}
+
+.progress-example {
+    width: 100%;
+}
+
+.progress-example .form-label {
+    margin-bottom: var(--space-2);
+}
+
+/* ============================================
+   TOGGLE SWITCHES
+   ============================================ */
+.toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-slider {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background-color: var(--color-gray-300);
+    border-radius: var(--radius-full);
+    transition: background-color var(--transition-normal);
+    flex-shrink: 0;
+}
+
+.toggle-slider::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: white;
+    top: 3px;
+    left: 3px;
+    transition: transform var(--transition-normal);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle input[type="checkbox"]:checked + .toggle-slider {
+    background-color: var(--color-primary);
+}
+
+.toggle input[type="checkbox"]:checked + .toggle-slider::before {
+    transform: translateX(20px);
+}
+
+.toggle input[type="checkbox"]:disabled + .toggle-slider {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.toggle-label {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-body);
+}
+
+/* Toggle Sizes */
+.toggle-sm .toggle-slider {
+    width: 36px;
+    height: 20px;
+}
+
+.toggle-sm .toggle-slider::before {
+    width: 14px;
+    height: 14px;
+}
+
+.toggle-sm input[type="checkbox"]:checked + .toggle-slider::before {
+    transform: translateX(16px);
+}
+
+.toggle-lg .toggle-slider {
+    width: 52px;
+    height: 28px;
+}
+
+.toggle-lg .toggle-slider::before {
+    width: 22px;
+    height: 22px;
+}
+
+.toggle-lg input[type="checkbox"]:checked + .toggle-slider::before {
+    transform: translateX(24px);
+}
+
+/* ============================================
+   RADIO BUTTONS
+   ============================================ */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    cursor: pointer;
+    user-select: none;
+}
+
+.radio input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-gray-400);
+    border-radius: 50%;
+    background-color: var(--color-surface);
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.radio-custom::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform var(--transition-fast);
+}
+
+.radio input[type="radio"]:checked + .radio-custom {
+    border-color: var(--color-primary);
+}
+
+.radio input[type="radio"]:checked + .radio-custom::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.radio input[type="radio"]:disabled + .radio-custom {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.radio:hover .radio-custom {
+    border-color: var(--color-primary);
+}
+
+.radio-label {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-body);
+}
+
+/* ============================================
+   CHECKBOXES
+   ============================================ */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-custom {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-gray-400);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-surface);
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.checkbox-custom::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    top: 2px;
+    left: 6px;
+    transform: rotate(45deg) scale(0);
+    transition: transform var(--transition-fast);
+}
+
+.checkbox input[type="checkbox"]:checked + .checkbox-custom {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.checkbox input[type="checkbox"]:checked + .checkbox-custom::after {
+    transform: rotate(45deg) scale(1);
+}
+
+.checkbox input[type="checkbox"]:disabled + .checkbox-custom {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.checkbox:hover .checkbox-custom {
+    border-color: var(--color-primary);
+}
+
+.checkbox-label {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-body);
+}
+
+/* Theme Toggle Switch in Sidebar */
+.theme-toggle-switch {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    background-color: var(--color-surface-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-normal);
+}
+
+.theme-toggle-switch:hover {
+    background-color: var(--color-surface);
+    border-color: var(--color-primary);
+}
+
+.theme-toggle-switch .toggle-label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.theme-icon {
+    font-size: 18px;
+}
+
+.theme-text {
+    font-size: var(--font-size-body-small);
+    font-weight: var(--font-weight-medium);
+}
