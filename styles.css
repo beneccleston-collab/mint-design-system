@@ -386,6 +386,39 @@ code {
     color: white;
 }
 
+.nav-subitems {
+    list-style: none;
+    padding-left: var(--space-4);
+    margin-top: var(--space-1);
+    display: none;
+}
+
+.nav-subitems.active {
+    display: block;
+}
+
+.nav-subitems li {
+    margin-bottom: 0;
+}
+
+.nav-subitems a {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-size-body-small);
+    color: var(--color-text-tertiary);
+    font-weight: var(--font-weight-regular);
+}
+
+.nav-subitems a:hover {
+    color: var(--color-primary);
+    background-color: transparent;
+}
+
+.nav-subitems a.active {
+    color: var(--color-primary);
+    background-color: transparent;
+    font-weight: var(--font-weight-medium);
+}
+
 .sidebar-footer {
     padding: 0 var(--space-6);
     margin-top: auto;
