@@ -2588,52 +2588,67 @@ code {
     margin-bottom: var(--space-4);
 }
 
-.animation-track {
-    height: 60px;
+/* Bezier Curve Demonstrations */
+.bezier-demo {
+    height: 120px;
     background-color: var(--color-surface-secondary);
     border-radius: var(--radius-md);
-    position: relative;
     margin-bottom: var(--space-3);
-    overflow: hidden;
+    position: relative;
+    overflow: visible;
+    padding: var(--space-2);
 }
 
-.animation-dot {
-    width: 24px;
-    height: 24px;
+.bezier-curve {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.curve-path {
+    fill: none;
+    stroke: var(--color-border);
+    stroke-width: 2;
+    opacity: 0.3;
+}
+
+.bezier-dot {
+    width: 16px;
+    height: 16px;
     background-color: var(--color-primary);
     border-radius: 50%;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 16px;
+    bottom: 10px;
+    left: 10px;
+    box-shadow: 0 2px 8px rgba(136, 199, 165, 0.4);
 }
 
-.animation-dot.animate {
-    animation: slideAcross 1.5s forwards;
+.bezier-dot.animate {
+    animation: followBezier 1.5s forwards;
 }
 
-.ease-out-dot.animate {
+.ease-out-bezier.animate {
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
-.ease-in-dot.animate {
+.ease-in-bezier.animate {
     animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
-.ease-in-out-dot.animate {
+.ease-in-out-bezier.animate {
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.linear-dot.animate {
-    animation-timing-function: linear;
-}
-
-@keyframes slideAcross {
-    from {
-        left: 16px;
+@keyframes followBezier {
+    0% {
+        left: 10px;
+        bottom: 10px;
     }
-    to {
-        left: calc(100% - 40px);
+    100% {
+        left: calc(100% - 26px);
+        bottom: calc(100% - 26px);
     }
 }
 
@@ -2884,4 +2899,25 @@ code {
     .logo-variants-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Practice Icons */
+.practice-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: var(--space-2);
+    vertical-align: middle;
+}
+
+.practice-icon-success {
+    color: var(--color-success);
+}
+
+.practice-icon-error {
+    color: var(--color-error);
+}
+
+.practice-card h3 {
+    display: flex;
+    align-items: center;
 }
