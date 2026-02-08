@@ -1312,6 +1312,14 @@ code {
         font-size: 36px;
     }
     
+    .hero,
+    .intro-section,
+    .features-section,
+    .getting-started {
+        padding-left: var(--space-6);
+        padding-right: var(--space-6);
+    }
+    
     .features-grid,
     .philosophy-grid,
     .steps,
@@ -1322,6 +1330,21 @@ code {
     .philosophy-section {
         margin: var(--space-8) calc(-1 * var(--space-6));
         padding: var(--space-16) calc(var(--space-6) * 2);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero,
+    .intro-section,
+    .features-section,
+    .getting-started {
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
+    }
+    
+    .philosophy-section {
+        margin: var(--space-8) calc(-1 * var(--space-4));
+        padding: var(--space-16) calc(var(--space-4) * 2);
     }
 }
 
