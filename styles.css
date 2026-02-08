@@ -2590,7 +2590,7 @@ code {
 
 /* Easing Demonstrations */
 .animation-track {
-    height: 80px;
+    height: 60px;
     background-color: var(--color-surface-secondary);
     border-radius: var(--radius-md);
     position: relative;
@@ -2599,14 +2599,13 @@ code {
 }
 
 .animation-dot {
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
     background-color: var(--color-primary);
     border-radius: var(--radius-md);
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 16px;
+    top: 10px;
+    left: 10px;
     box-shadow: 0 2px 8px rgba(136, 199, 165, 0.4);
 }
 
@@ -2628,10 +2627,10 @@ code {
 
 @keyframes slideAcross {
     from {
-        left: 16px;
+        left: 10px;
     }
     to {
-        left: calc(100% - 40px);
+        left: calc(100% - 50px);
     }
 }
 
@@ -2691,10 +2690,11 @@ code {
     position: absolute;
     top: 10px;
     left: 10px;
+    box-shadow: 0 2px 8px rgba(136, 199, 165, 0.4);
 }
 
 .duration-box.animate {
-    animation: moveDuration forwards;
+    animation: moveDuration forwards ease-out;
 }
 
 .duration-fast.animate {
