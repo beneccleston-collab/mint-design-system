@@ -1980,6 +1980,7 @@ code {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 20px solid #2D3E50;
+    margin-left: -2px;
 }
 
 /* Sidebar Logo */
@@ -2035,6 +2036,7 @@ code {
     border-left: 24px solid transparent;
     border-right: 24px solid transparent;
     border-bottom: 48px solid #2D3E50;
+    margin-left: -4px;
 }
 
 /* Logo Showcase on Foundations Page */
@@ -2095,6 +2097,7 @@ code {
     border-left: 16px solid transparent;
     border-right: 16px solid transparent;
     border-bottom: 32px solid #2D3E50;
+    margin-left: -3px;
 }
 
 .logo-text-display {
