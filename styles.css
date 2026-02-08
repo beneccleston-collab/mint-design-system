@@ -1957,7 +1957,6 @@ code {
 /* Logo Shapes - Base */
 .logo-shapes {
     display: flex;
-    gap: 2px;
     align-items: flex-end;
 }
 
@@ -1965,7 +1964,7 @@ code {
     width: 20px;
     height: 20px;
     background: #88C7A5;
-    margin-right: 2px;
+    margin-right: 4px;
 }
 
 .logo-circle {
@@ -1973,6 +1972,7 @@ code {
     height: 20px;
     background: #6BAA88;
     border-radius: 50%;
+    margin-right: 2px;
 }
 
 .logo-triangle {
@@ -1981,7 +1981,6 @@ code {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 20px solid #2D3E50;
-    margin-left: -1px;
 }
 
 /* Sidebar Logo */
@@ -2017,19 +2016,19 @@ code {
 
 .logo-shapes-large {
     display: flex;
-    gap: 5px;
     align-items: flex-end;
 }
 
 .logo-shapes-large .logo-square {
     width: 48px;
     height: 48px;
-    margin-right: 3px;
+    margin-right: 8px;
 }
 
 .logo-shapes-large .logo-circle {
     width: 48px;
     height: 48px;
+    margin-right: 4px;
 }
 
 .logo-shapes-large .logo-triangle {
@@ -2038,7 +2037,6 @@ code {
     border-left: 24px solid transparent;
     border-right: 24px solid transparent;
     border-bottom: 48px solid #2D3E50;
-    margin-left: -2px;
 }
 
 /* Logo Showcase on Foundations Page */
@@ -2079,19 +2077,19 @@ code {
 
 .logo-shapes-display {
     display: flex;
-    gap: 4px;
     align-items: flex-end;
 }
 
 .logo-shapes-display .logo-square {
     width: 32px;
     height: 32px;
-    margin-right: 2px;
+    margin-right: 6px;
 }
 
 .logo-shapes-display .logo-circle {
     width: 32px;
     height: 32px;
+    margin-right: 3px;
 }
 
 .logo-shapes-display .logo-triangle {
@@ -2100,7 +2098,6 @@ code {
     border-left: 16px solid transparent;
     border-right: 16px solid transparent;
     border-bottom: 32px solid #2D3E50;
-    margin-left: -2px;
 }
 
 .logo-text-display {
