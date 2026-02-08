@@ -2841,3 +2841,25 @@ code {
     color: var(--color-primary);
     stroke-width: 1.5;
 }
+
+/* Wordmark Logo */
+.logo-wordmark {
+    font-size: 32px;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    letter-spacing: -0.5px;
+}
+
+.mobile-logo-wordmark {
+    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    letter-spacing: -0.3px;
+}
+
+/* Theme Toggle Icon in Mobile Header */
+.theme-toggle-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-primary);
+}
