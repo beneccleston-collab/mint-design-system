@@ -2831,3 +2831,11 @@ code {
         grid-template-columns: 1fr;
     }
 }
+
+/* Feature Card Lucide Icons */
+.feature-lucide-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--color-primary);
+    stroke-width: 1.5;
+}
