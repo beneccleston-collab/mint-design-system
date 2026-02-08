@@ -147,9 +147,14 @@ function updateToggleButtons(theme) {
     
     // Update mobile toggle button
     if (mobileThemeToggle) {
-        const icon = mobileThemeToggle.querySelector('.toggle-icon');
+        const icon = mobileThemeToggle.querySelector('.theme-toggle-icon');
         if (icon) {
-            icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+            // Update Lucide icon
+            icon.setAttribute('data-lucide', theme === 'dark' ? 'sun' : 'moon');
+            // Re-initialize Lucide icons to update the SVG
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
         }
     }
 }
