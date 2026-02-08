@@ -2863,3 +2863,11 @@ code {
     height: 20px;
     color: var(--color-text-primary);
 }
+
+/* Wordmark Display (uses theme colors) */
+.logo-wordmark-display {
+    font-size: 32px;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    letter-spacing: -0.5px;
+}
