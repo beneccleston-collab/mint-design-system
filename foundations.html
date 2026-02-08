@@ -17,9 +17,9 @@
             <span></span>
             <span></span>
         </button>
-        <div class="mobile-logo">My Design System</div>
-        <button id="mobileThemeToggle" class="mobile-theme-toggle">
-            <span class="toggle-icon">🌙</span>
+        <div class="mobile-logo-wordmark">Mint</div>
+        <button id="mobileThemeToggle" class="mobile-theme-toggle" aria-label="Toggle theme">
+            <i data-lucide="moon" class="theme-toggle-icon"></i>
         </button>
     </header>
 
@@ -96,6 +96,23 @@
                         </div>
                     </div>
                     <p class="caption">Icon on dark background</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Wordmark Only</h3>
+            <div class="logo-showcase">
+                <div class="logo-example">
+                    <div class="logo-preview-box">
+                        <div class="logo-wordmark">Mint</div>
+                    </div>
+                    <p class="caption">Wordmark only</p>
+                </div>
+                
+                <div class="logo-example">
+                    <div class="logo-preview-box dark-bg">
+                        <div class="logo-wordmark light-text">Mint</div>
+                    </div>
+                    <p class="caption">Wordmark on dark background</p>
                 </div>
             </div>
 
@@ -510,5 +527,9 @@
     </main>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
