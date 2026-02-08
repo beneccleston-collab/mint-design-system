@@ -77,8 +77,8 @@
                         </div>
                         <p class="easing-description">Starts fast, ends slow. Best for elements entering the screen or appearing.</p>
                         <div class="bezier-demo">
-                            <svg class="bezier-curve" viewBox="0 0 200 100" preserveAspectRatio="none">
-                                <path d="M 0,100 C 0,100 40,20 200,0" class="curve-path" stroke-dasharray="400" stroke-dashoffset="400"></path>
+                            <svg class="bezier-curve" viewBox="0 0 220 120" preserveAspectRatio="none">
+                                <path d="M 10,110 C 10,110 50,30 210,10" class="curve-path ease-out-path" stroke-dasharray="500" stroke-dashoffset="500"></path>
                             </svg>
                             <div class="bezier-dot ease-out-bezier"></div>
                         </div>
@@ -96,8 +96,8 @@
                         </div>
                         <p class="easing-description">Starts slow, ends fast. Best for elements leaving the screen or disappearing.</p>
                         <div class="bezier-demo">
-                            <svg class="bezier-curve" viewBox="0 0 200 100" preserveAspectRatio="none">
-                                <path d="M 0,100 C 80,100 200,0 200,0" class="curve-path" stroke-dasharray="400" stroke-dashoffset="400"></path>
+                            <svg class="bezier-curve" viewBox="0 0 220 120" preserveAspectRatio="none">
+                                <path d="M 10,110 C 90,110 210,10 210,10" class="curve-path ease-in-path" stroke-dasharray="500" stroke-dashoffset="500"></path>
                             </svg>
                             <div class="bezier-dot ease-in-bezier"></div>
                         </div>
@@ -115,8 +115,8 @@
                         </div>
                         <p class="easing-description">Smooth acceleration and deceleration. Best for transitions and transformations.</p>
                         <div class="bezier-demo">
-                            <svg class="bezier-curve" viewBox="0 0 200 100" preserveAspectRatio="none">
-                                <path d="M 0,100 C 80,100 120,0 200,0" class="curve-path" stroke-dasharray="400" stroke-dashoffset="400"></path>
+                            <svg class="bezier-curve" viewBox="0 0 220 120" preserveAspectRatio="none">
+                                <path d="M 10,110 C 90,110 130,10 210,10" class="curve-path ease-in-out-path" stroke-dasharray="500" stroke-dashoffset="500"></path>
                             </svg>
                             <div class="bezier-dot ease-in-out-bezier"></div>
                         </div>
@@ -135,7 +135,7 @@
                         <div class="duration-header">
                             <h3>Fast (150ms)</h3>
                         </div>
-                        <p>Small changes, hover states, micro-interactions</p>
+                        <p>Quick changes like hover states and micro-interactions</p>
                         <div class="duration-demo">
                             <div class="duration-box duration-fast"></div>
                         </div>
@@ -146,7 +146,7 @@
                         <div class="duration-header">
                             <h3>Normal (250ms)</h3>
                         </div>
-                        <p>Default for most transitions, state changes</p>
+                        <p>Default for most transitions and state changes</p>
                         <div class="duration-demo">
                             <div class="duration-box duration-normal"></div>
                         </div>
@@ -157,7 +157,7 @@
                         <div class="duration-header">
                             <h3>Slow (350ms)</h3>
                         </div>
-                        <p>Large movements, important changes, page transitions</p>
+                        <p>Large movements and important page transitions</p>
                         <div class="duration-demo">
                             <div class="duration-box duration-slow"></div>
                         </div>
@@ -273,14 +273,18 @@
                     
                     // Reset animations
                     dot.classList.remove('animate');
-                    path.style.strokeDashoffset = '400';
+                    path.style.strokeDashoffset = '500';
+                    path.style.transition = 'none';
                     
                     void dot.offsetWidth; // Trigger reflow
                     
-                    // Start animations
-                    dot.classList.add('animate');
-                    path.style.transition = 'stroke-dashoffset 1.5s ' + getEasingFunction(animationType);
-                    path.style.strokeDashoffset = '0';
+                    // Start animations with matching duration and easing
+                    setTimeout(() => {
+                        const easingFunction = getEasingFunction(animationType);
+                        dot.classList.add('animate');
+                        path.style.transition = `stroke-dashoffset 1.5s ${easingFunction}`;
+                        path.style.strokeDashoffset = '0';
+                    }, 10);
                 } else if (animationType.startsWith('duration-')) {
                     const box = card.querySelector('.duration-box');
                     box.classList.remove('animate');
