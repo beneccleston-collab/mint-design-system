@@ -2630,7 +2630,7 @@ code {
 
 /* Ease Out - follows the curve */
 .ease-out-bezier {
-    offset-path: path('M 10,110 C 10,110 50,30 190,10');
+    offset-path: path('M 10,110 C 10,110 50,30 210,10');
 }
 
 .ease-out-bezier.animate {
@@ -2639,7 +2639,7 @@ code {
 
 /* Ease In - follows the curve */
 .ease-in-bezier {
-    offset-path: path('M 10,110 C 90,110 190,10 190,10');
+    offset-path: path('M 10,110 C 90,110 210,10 210,10');
 }
 
 .ease-in-bezier.animate {
@@ -2648,7 +2648,7 @@ code {
 
 /* Ease In-Out - follows the curve */
 .ease-in-out-bezier {
-    offset-path: path('M 10,110 C 90,110 130,10 190,10');
+    offset-path: path('M 10,110 C 90,110 130,10 210,10');
 }
 
 .ease-in-out-bezier.animate {
