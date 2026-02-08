@@ -2588,79 +2588,50 @@ code {
     margin-bottom: var(--space-4);
 }
 
-/* Bezier Curve Demonstrations */
-.bezier-demo {
-    height: 120px;
+/* Easing Demonstrations */
+.animation-track {
+    height: 80px;
     background-color: var(--color-surface-secondary);
     border-radius: var(--radius-md);
-    margin-bottom: var(--space-3);
     position: relative;
-    overflow: visible;
-    padding: var(--space-2);
+    margin-bottom: var(--space-3);
+    overflow: hidden;
 }
 
-.bezier-curve {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.curve-path {
-    fill: none;
-    stroke: var(--color-border);
-    stroke-width: 3;
-    opacity: 0.5;
-}
-
-.bezier-dot {
-    width: 16px;
-    height: 16px;
+.animation-dot {
+    width: 24px;
+    height: 24px;
     background-color: var(--color-primary);
     border-radius: 50%;
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
     box-shadow: 0 2px 8px rgba(136, 199, 165, 0.4);
-    offset-distance: 0%;
 }
 
-.bezier-dot.animate {
-    animation: followPath 1.5s forwards;
+.animation-dot.animate {
+    animation: slideAcross 1.5s forwards;
 }
 
-/* Ease Out - follows the curve */
-.ease-out-bezier {
-    offset-path: path('M 10,110 C 10,110 50,30 210,10');
-}
-
-.ease-out-bezier.animate {
+.ease-out-dot.animate {
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
-/* Ease In - follows the curve */
-.ease-in-bezier {
-    offset-path: path('M 10,110 C 90,110 210,10 210,10');
-}
-
-.ease-in-bezier.animate {
+.ease-in-dot.animate {
     animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
-/* Ease In-Out - follows the curve */
-.ease-in-out-bezier {
-    offset-path: path('M 10,110 C 90,110 130,10 210,10');
-}
-
-.ease-in-out-bezier.animate {
+.ease-in-out-dot.animate {
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes followPath {
-    0% {
-        offset-distance: 0%;
+@keyframes slideAcross {
+    from {
+        left: 16px;
     }
-    100% {
-        offset-distance: 100%;
+    to {
+        left: calc(100% - 40px);
     }
 }
 
