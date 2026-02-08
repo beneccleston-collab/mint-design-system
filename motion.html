@@ -76,8 +76,11 @@
                             <button class="btn btn-sm btn-primary play-btn" data-animation="ease-out">Play</button>
                         </div>
                         <p class="easing-description">Starts fast, ends slow. Best for elements entering the screen or appearing.</p>
-                        <div class="animation-track">
-                            <div class="animation-dot ease-out-dot"></div>
+                        <div class="bezier-demo">
+                            <svg class="bezier-curve" viewBox="0 0 200 100" preserveAspectRatio="none">
+                                <path d="M 0,100 C 0,100 40,20 200,0" class="curve-path" stroke-dasharray="400" stroke-dashoffset="400"></path>
+                            </svg>
+                            <div class="bezier-dot ease-out-bezier"></div>
                         </div>
                         <p class="usage-note"><strong>Use for:</strong> Modals appearing, dropdowns opening, tooltips</p>
                     </div>
@@ -92,8 +95,11 @@
                             <button class="btn btn-sm btn-primary play-btn" data-animation="ease-in">Play</button>
                         </div>
                         <p class="easing-description">Starts slow, ends fast. Best for elements leaving the screen or disappearing.</p>
-                        <div class="animation-track">
-                            <div class="animation-dot ease-in-dot"></div>
+                        <div class="bezier-demo">
+                            <svg class="bezier-curve" viewBox="0 0 200 100" preserveAspectRatio="none">
+                                <path d="M 0,100 C 80,100 200,0 200,0" class="curve-path" stroke-dasharray="400" stroke-dashoffset="400"></path>
+                            </svg>
+                            <div class="bezier-dot ease-in-bezier"></div>
                         </div>
                         <p class="usage-note"><strong>Use for:</strong> Modals closing, elements being dismissed</p>
                     </div>
@@ -108,26 +114,13 @@
                             <button class="btn btn-sm btn-primary play-btn" data-animation="ease-in-out">Play</button>
                         </div>
                         <p class="easing-description">Smooth acceleration and deceleration. Best for transitions and transformations.</p>
-                        <div class="animation-track">
-                            <div class="animation-dot ease-in-out-dot"></div>
+                        <div class="bezier-demo">
+                            <svg class="bezier-curve" viewBox="0 0 200 100" preserveAspectRatio="none">
+                                <path d="M 0,100 C 80,100 120,0 200,0" class="curve-path" stroke-dasharray="400" stroke-dashoffset="400"></path>
+                            </svg>
+                            <div class="bezier-dot ease-in-out-bezier"></div>
                         </div>
                         <p class="usage-note"><strong>Use for:</strong> Element movement, state changes, transforms</p>
-                    </div>
-
-                    <!-- Linear -->
-                    <div class="easing-card">
-                        <div class="easing-header">
-                            <div>
-                                <h3>Linear</h3>
-                                <code>linear</code>
-                            </div>
-                            <button class="btn btn-sm btn-primary play-btn" data-animation="linear">Play</button>
-                        </div>
-                        <p class="easing-description">Constant speed throughout. Use sparingly—feels mechanical.</p>
-                        <div class="animation-track">
-                            <div class="animation-dot linear-dot"></div>
-                        </div>
-                        <p class="usage-note"><strong>Use for:</strong> Loading spinners, progress bars (continuous motion)</p>
                     </div>
                 </div>
             </section>
@@ -240,7 +233,7 @@
                 
                 <div class="best-practices-grid">
                     <div class="practice-card do">
-                        <h3>✓ Do</h3>
+                        <h3><i data-lucide="check-circle" class="practice-icon practice-icon-success"></i> Do</h3>
                         <ul>
                             <li>Keep animations under 400ms</li>
                             <li>Use ease-out for entering elements</li>
@@ -251,7 +244,7 @@
                     </div>
 
                     <div class="practice-card dont">
-                        <h3>✗ Don't</h3>
+                        <h3><i data-lucide="x-circle" class="practice-icon practice-icon-error"></i> Don't</h3>
                         <ul>
                             <li>Don't animate multiple elements simultaneously</li>
                             <li>Don't use bounce or elastic easing</li>
@@ -278,10 +271,19 @@
                 const card = this.closest('.easing-card, .duration-card');
                 
                 if (animationType.startsWith('ease-')) {
-                    const dot = card.querySelector('.animation-dot');
+                    const dot = card.querySelector('.bezier-dot');
+                    const path = card.querySelector('.curve-path');
+                    
+                    // Reset animations
                     dot.classList.remove('animate');
+                    path.style.strokeDashoffset = '400';
+                    
                     void dot.offsetWidth; // Trigger reflow
+                    
+                    // Start animations
                     dot.classList.add('animate');
+                    path.style.transition = 'stroke-dashoffset 1.5s ' + getEasingFunction(animationType);
+                    path.style.strokeDashoffset = '0';
                 } else if (animationType.startsWith('duration-')) {
                     const box = card.querySelector('.duration-box');
                     box.classList.remove('animate');
@@ -290,6 +292,15 @@
                 }
             });
         });
+        
+        function getEasingFunction(type) {
+            const easings = {
+                'ease-out': 'cubic-bezier(0, 0, 0.2, 1)',
+                'ease-in': 'cubic-bezier(0.4, 0, 1, 1)',
+                'ease-in-out': 'cubic-bezier(0.4, 0, 0.2, 1)'
+            };
+            return easings[type] || 'ease';
+        }
 
         // Fade trigger
         document.querySelectorAll('.fade-trigger').forEach(btn => {
