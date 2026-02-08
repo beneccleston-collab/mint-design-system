@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <!-- Mobile Header -->
@@ -54,18 +53,17 @@
                             <div class="mobile-screen">
                                 <div class="screen-content">
                                     <div class="screen-header-centered">
-                                        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 16px;">
+                                        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 12px; margin-top: 32px;">
                                             <div class="logo-shapes-large" style="transform: scale(0.6);">
                                                 <div class="logo-square"></div>
                                                 <div class="logo-circle"></div>
                                                 <div class="logo-triangle"></div>
                                             </div>
                                         </div>
-                                        <h2 style="margin-top: 0;">Welcome back</h2>
-                                        <p style="color: var(--color-text-secondary); margin-top: 8px;">Sign in to continue</p>
+                                        <h3 style="margin-top: 0; margin-bottom: 0;">Welcome back</h3>
                                     </div>
                                     
-                                    <div style="padding: 0 24px; margin-top: 48px;">
+                                    <div style="padding: 0 24px; margin-top: 32px;">
                                         <div style="margin-bottom: 16px;">
                                             <label class="form-label">Email</label>
                                             <input type="email" class="form-input" placeholder="you@example.com">
@@ -173,11 +171,11 @@
                                     
                                     <div style="padding: 0 20px;">
                                         <div style="text-align: center; margin-bottom: 32px;">
-                                            <div style="width: 80px; height: 80px; background: var(--color-primary); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(136, 199, 165, 0.3);">
-                                                <i data-lucide="user" style="width: 40px; height: 40px; color: white;"></i>
+                                            <div style="width: 60px; height: 60px; background: var(--color-primary); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(136, 199, 165, 0.3);">
+                                                <i data-lucide="user" style="width: 30px; height: 30px; color: white;"></i>
                                             </div>
                                             <h3 style="margin-bottom: 4px;">Sarah Johnson</h3>
-                                            <p style="color: var(--color-text-secondary); font-size: 14px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fd8e9c8f9c95bd98859c908d9198d39e9290">[email&#160;protected]</a></p>
+                                            <p style="color: var(--color-text-secondary); font-size: 14px;">sarah@example.com</p>
                                         </div>
                                         
                                         <div class="card" style="padding: 0; overflow: hidden; margin-bottom: 16px;">
@@ -236,9 +234,9 @@
                             <div class="mobile-screen">
                                 <div class="screen-content">
                                     <div style="padding: 40px 24px; text-align: center;">
-                                        <img src="assets/illustrations/Onboarding.svg" alt="Get started" style="width: 160px; height: 160px; margin: 0 auto 24px; display: block;">
+                                        <img src="assets/illustrations/Onboarding.svg" alt="Get started" style="width: 140px; height: 140px; margin: 0 auto 24px; display: block;">
                                         
-                                        <h2 style="margin-bottom: 12px;">Get Started</h2>
+                                        <h3 style="margin-bottom: 12px;">Get Started</h3>
                                         <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 32px;">Track your finances, set goals, and achieve financial freedom with our simple tools.</p>
                                         
                                         <div style="display: flex; gap: 8px; justify-content: center; margin-bottom: 48px;">
@@ -282,7 +280,7 @@
                                         <h3 style="margin-bottom: 8px;">No messages yet</h3>
                                         <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 24px;">Start a conversation with your team members.</p>
                                         
-                                        <button class="btn btn-primary">
+                                        <button class="btn btn-primary" style="width: 100%;">
                                             <i data-lucide="plus" style="width: 16px; height: 16px; margin-right: 8px;"></i>
                                             New Message
                                         </button>
@@ -307,11 +305,11 @@
                             <div class="mobile-screen">
                                 <div class="screen-content">
                                     <div style="padding: 80px 40px; text-align: center;">
-                                        <div style="width: 80px; height: 80px; background: rgba(107, 170, 136, 0.15); border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center;">
-                                            <i data-lucide="check-circle" style="width: 48px; height: 48px; color: var(--color-success);"></i>
+                                        <div style="width: 60px; height: 60px; background: rgba(107, 170, 136, 0.15); border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center;">
+                                            <i data-lucide="check-circle" style="width: 36px; height: 36px; color: var(--color-success);"></i>
                                         </div>
                                         
-                                        <h2 style="margin-bottom: 12px;">Payment Successful!</h2>
+                                        <h3 style="margin-bottom: 12px;">Payment Successful!</h3>
                                         <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 32px;">Your transaction has been completed successfully.</p>
                                         
                                         <div class="card" style="text-align: left; margin-bottom: 32px;">
@@ -379,6 +377,7 @@
     </main>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();
     </script>
