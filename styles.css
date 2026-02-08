@@ -2610,8 +2610,8 @@ code {
 .curve-path {
     fill: none;
     stroke: var(--color-border);
-    stroke-width: 2;
-    opacity: 0.3;
+    stroke-width: 3;
+    opacity: 0.5;
 }
 
 .bezier-dot {
@@ -2620,35 +2620,47 @@ code {
     background-color: var(--color-primary);
     border-radius: 50%;
     position: absolute;
-    bottom: 10px;
-    left: 10px;
     box-shadow: 0 2px 8px rgba(136, 199, 165, 0.4);
+    offset-distance: 0%;
 }
 
 .bezier-dot.animate {
-    animation: followBezier 1.5s forwards;
+    animation: followPath 1.5s forwards;
+}
+
+/* Ease Out - follows the curve */
+.ease-out-bezier {
+    offset-path: path('M 10,110 C 10,110 50,30 190,10');
 }
 
 .ease-out-bezier.animate {
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+/* Ease In - follows the curve */
+.ease-in-bezier {
+    offset-path: path('M 10,110 C 90,110 190,10 190,10');
+}
+
 .ease-in-bezier.animate {
     animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* Ease In-Out - follows the curve */
+.ease-in-out-bezier {
+    offset-path: path('M 10,110 C 90,110 130,10 190,10');
 }
 
 .ease-in-out-bezier.animate {
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes followBezier {
+@keyframes followPath {
     0% {
-        left: 10px;
-        bottom: 10px;
+        offset-distance: 0%;
     }
     100% {
-        left: calc(100% - 26px);
-        bottom: calc(100% - 26px);
+        offset-distance: 100%;
     }
 }
 
@@ -2675,9 +2687,6 @@ code {
 }
 
 .duration-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: var(--space-3);
 }
 
