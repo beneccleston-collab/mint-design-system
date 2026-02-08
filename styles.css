@@ -2307,53 +2307,6 @@ code {
     padding: var(--space-6);
 }
 
-.duration-demo {
-    height: 80px;
-    background-color: var(--color-surface-secondary);
-    border-radius: var(--radius-md);
-    margin-bottom: var(--space-4);
-    position: relative;
-    overflow: hidden;
-}
-
-.duration-box {
-    width: 60px;
-    height: 60px;
-    background-color: var(--color-primary);
-    border-radius: var(--radius-md);
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    animation: slideRightBox 3s infinite;
-}
-
-.duration-box.fast {
-    animation-duration: 150ms;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-.duration-box.normal {
-    animation-duration: 250ms;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-.duration-box.slow {
-    animation-duration: 350ms;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-@keyframes slideRightBox {
-    0%, 100% {
-        left: 10px;
-    }
-    50% {
-        left: calc(100% - 70px);
-    }
-}
-
 .duration-info h4 {
     margin-bottom: var(--space-2);
     color: var(--color-text-primary);
