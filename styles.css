@@ -2903,7 +2903,7 @@ code {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     position: relative;
-    font-size: 56.25%;
+    font-size: 60%;
 }
 
 /* Notch simulation */
