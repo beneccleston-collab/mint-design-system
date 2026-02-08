@@ -73,28 +73,36 @@
             <h2>What's Inside</h2>
             <div class="features-grid">
                 <a href="foundations.html" class="feature-card">
-                    <div class="feature-icon">🎨</div>
+                    <div class="feature-icon">
+                        <i data-lucide="palette" class="feature-lucide-icon"></i>
+                    </div>
                     <h3>Foundations</h3>
                     <p>Color palettes, typography scales, spacing systems, and elevation—all the building blocks you need.</p>
                     <span class="feature-link">Explore Foundations →</span>
                 </a>
 
                 <a href="components.html" class="feature-card">
-                    <div class="feature-icon">🧩</div>
+                    <div class="feature-icon">
+                        <i data-lucide="box" class="feature-lucide-icon"></i>
+                    </div>
                     <h3>Components</h3>
                     <p>Pre-built, accessible UI components ready to use. From buttons to cards, inputs to badges.</p>
                     <span class="feature-link">View Components →</span>
                 </a>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🌓</div>
+                    <div class="feature-icon">
+                        <i data-lucide="moon" class="feature-lucide-icon"></i>
+                    </div>
                     <h3>Dark Mode</h3>
                     <p>Every element works seamlessly in both light and dark themes with smooth transitions.</p>
                     <span class="feature-link">Toggle theme to try it →</span>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">📐</div>
+                    <div class="feature-icon">
+                        <i data-lucide="grid-3x3" class="feature-lucide-icon"></i>
+                    </div>
                     <h3>Systematic Approach</h3>
                     <p>Built on a 4px spacing grid with consistent patterns and predictable behavior throughout.</p>
                     <span class="feature-link">See the system in action →</span>
@@ -150,12 +158,14 @@
         <!-- Footer -->
         <footer class="footer">
             <p>Built with fresh mint and good vibes 🌿</p>
-            <p class="footer-meta">
-                <a href="https://github.com/your-username/my-design-system" target="_blank">View on GitHub</a>
-            </p>
         </footer>
     </main>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
