@@ -1312,18 +1312,6 @@ code {
         font-size: 36px;
     }
     
-    .hero {
-        padding-left: var(--space-6);
-        padding-right: var(--space-6);
-    }
-    
-    .intro-section,
-    .features-section,
-    .getting-started {
-        padding-left: var(--space-6);
-        padding-right: var(--space-6);
-    }
-    
     .features-grid,
     .philosophy-grid,
     .steps,
