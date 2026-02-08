@@ -2871,3 +2871,17 @@ code {
     color: var(--color-text-primary);
     letter-spacing: -0.5px;
 }
+
+/* Logo Variants Grid - Side by Side */
+.logo-variants-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+@media (max-width: 1024px) {
+    .logo-variants-grid {
+        grid-template-columns: 1fr;
+    }
+}
