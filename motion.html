@@ -76,11 +76,8 @@
                             <button class="btn btn-sm btn-primary play-btn" data-animation="ease-out">Play</button>
                         </div>
                         <p class="easing-description">Starts fast, ends slow. Best for elements entering the screen or appearing.</p>
-                        <div class="bezier-demo">
-                            <svg class="bezier-curve" viewBox="0 0 220 120" preserveAspectRatio="none">
-                                <path d="M 10,110 C 10,110 50,30 210,10" class="curve-path ease-out-path" stroke-dasharray="500" stroke-dashoffset="500"></path>
-                            </svg>
-                            <div class="bezier-dot ease-out-bezier"></div>
+                        <div class="animation-track">
+                            <div class="animation-dot ease-out-dot"></div>
                         </div>
                         <p class="usage-note"><strong>Use for:</strong> Modals appearing, dropdowns opening, tooltips</p>
                     </div>
@@ -95,11 +92,8 @@
                             <button class="btn btn-sm btn-primary play-btn" data-animation="ease-in">Play</button>
                         </div>
                         <p class="easing-description">Starts slow, ends fast. Best for elements leaving the screen or disappearing.</p>
-                        <div class="bezier-demo">
-                            <svg class="bezier-curve" viewBox="0 0 220 120" preserveAspectRatio="none">
-                                <path d="M 10,110 C 90,110 210,10 210,10" class="curve-path ease-in-path" stroke-dasharray="500" stroke-dashoffset="500"></path>
-                            </svg>
-                            <div class="bezier-dot ease-in-bezier"></div>
+                        <div class="animation-track">
+                            <div class="animation-dot ease-in-dot"></div>
                         </div>
                         <p class="usage-note"><strong>Use for:</strong> Modals closing, elements being dismissed</p>
                     </div>
@@ -114,11 +108,8 @@
                             <button class="btn btn-sm btn-primary play-btn" data-animation="ease-in-out">Play</button>
                         </div>
                         <p class="easing-description">Smooth acceleration and deceleration. Best for transitions and transformations.</p>
-                        <div class="bezier-demo">
-                            <svg class="bezier-curve" viewBox="0 0 220 120" preserveAspectRatio="none">
-                                <path d="M 10,110 C 90,110 130,10 210,10" class="curve-path ease-in-out-path" stroke-dasharray="500" stroke-dashoffset="500"></path>
-                            </svg>
-                            <div class="bezier-dot ease-in-out-bezier"></div>
+                        <div class="animation-track">
+                            <div class="animation-dot ease-in-out-dot"></div>
                         </div>
                         <p class="usage-note"><strong>Use for:</strong> Element movement, state changes, transforms</p>
                     </div>
@@ -268,23 +259,10 @@
                 const card = this.closest('.easing-card, .duration-card');
                 
                 if (animationType.startsWith('ease-')) {
-                    const dot = card.querySelector('.bezier-dot');
-                    const path = card.querySelector('.curve-path');
-                    
-                    // Reset animations
+                    const dot = card.querySelector('.animation-dot');
                     dot.classList.remove('animate');
-                    path.style.strokeDashoffset = '500';
-                    path.style.transition = 'none';
-                    
                     void dot.offsetWidth; // Trigger reflow
-                    
-                    // Start animations with matching duration and easing
-                    setTimeout(() => {
-                        const easingFunction = getEasingFunction(animationType);
-                        dot.classList.add('animate');
-                        path.style.transition = `stroke-dashoffset 1.5s ${easingFunction}`;
-                        path.style.strokeDashoffset = '0';
-                    }, 10);
+                    dot.classList.add('animate');
                 } else if (animationType.startsWith('duration-')) {
                     const box = card.querySelector('.duration-box');
                     box.classList.remove('animate');
@@ -293,15 +271,6 @@
                 }
             });
         });
-        
-        function getEasingFunction(type) {
-            const easings = {
-                'ease-out': 'cubic-bezier(0, 0, 0.2, 1)',
-                'ease-in': 'cubic-bezier(0.4, 0, 1, 1)',
-                'ease-in-out': 'cubic-bezier(0.4, 0, 0.2, 1)'
-            };
-            return easings[type] || 'ease';
-        }
 
         // Fade trigger
         document.querySelectorAll('.fade-trigger').forEach(btn => {
