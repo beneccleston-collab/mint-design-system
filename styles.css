@@ -2903,6 +2903,7 @@ code {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     position: relative;
+    font-size: 75%;
 }
 
 /* Notch simulation */
@@ -2921,7 +2922,7 @@ code {
 
 .screen-content {
     height: 100%;
-    overflow-y: auto;
+    overflow: hidden;
     padding-top: 24px;
 }
 
