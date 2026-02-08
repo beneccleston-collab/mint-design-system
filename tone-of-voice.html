@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tone of Voice - Mint Design System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="mobile-logo-wordmark">Mint</div>
+        <button id="mobileThemeToggle" class="mobile-theme-toggle" aria-label="Toggle theme">
+            <i data-lucide="moon" class="theme-toggle-icon"></i>
+        </button>
+    </header>
+
+    <!-- Sidebar Navigation (loaded dynamically) -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <h1>Tone of Voice</h1>
+                <p class="subtitle">Clear, warm, and confident communication that matches our refined aesthetic</p>
+            </header>
+
+            <!-- Voice Principles -->
+            <section class="section" id="principles">
+                <h2 class="section-title">Voice Principles</h2>
+                <p class="section-description">Our tone of voice reflects our design philosophy: refined, thoughtful, and human.</p>
+                
+                <div class="voice-principles-grid">
+                    <div class="voice-principle">
+                        <h3>Clear & Direct</h3>
+                        <p>We get to the point without unnecessary fluff. Every word earns its place.</p>
+                        <div class="voice-example">
+                            <div class="example-do">
+                                <span class="example-label">✓ Do</span>
+                                <p>"Save your progress"</p>
+                            </div>
+                            <div class="example-dont">
+                                <span class="example-label">✗ Don't</span>
+                                <p>"Would you perhaps like to consider saving your progress at this time?"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="voice-principle">
+                        <h3>Warm & Human</h3>
+                        <p>Professional doesn't mean cold. We're approachable and friendly without being overly casual.</p>
+                        <div class="voice-example">
+                            <div class="example-do">
+                                <span class="example-label">✓ Do</span>
+                                <p>"We've updated your settings"</p>
+                            </div>
+                            <div class="example-dont">
+                                <span class="example-label">✗ Don't</span>
+                                <p>"Settings modification operation completed successfully"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="voice-principle">
+                        <h3>Confident & Helpful</h3>
+                        <p>We guide without overwhelming. Clear next steps, no jargon, no apologies for doing our job.</p>
+                        <div class="voice-example">
+                            <div class="example-do">
+                                <span class="example-label">✓ Do</span>
+                                <p>"Choose a payment method"</p>
+                            </div>
+                            <div class="example-dont">
+                                <span class="example-label">✗ Don't</span>
+                                <p>"Sorry, but we need you to select a payment method"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="voice-principle">
+                        <h3>Precise & Thoughtful</h3>
+                        <p>We choose words carefully. Specific over vague, active over passive.</p>
+                        <div class="voice-example">
+                            <div class="example-do">
+                                <span class="example-label">✓ Do</span>
+                                <p>"Delete this file?"</p>
+                            </div>
+                            <div class="example-dont">
+                                <span class="example-label">✗ Don't</span>
+                                <p>"Are you sure you want to proceed with deletion?"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Writing Guidelines -->
+            <section class="section" id="guidelines">
+                <h2 class="section-title">Writing Guidelines</h2>
+                
+                <div class="guidelines-two-col">
+                    <div class="guideline-group">
+                        <h3>Grammar & Style</h3>
+                        <ul class="guideline-list">
+                            <li>Use sentence case for headings and buttons</li>
+                            <li>Write in active voice when possible</li>
+                            <li>Keep sentences short (15-20 words max)</li>
+                            <li>Use contractions naturally (we're, you'll, don't)</li>
+                            <li>Avoid exclamation marks except for genuine excitement</li>
+                        </ul>
+                    </div>
+
+                    <div class="guideline-group">
+                        <h3>Word Choice</h3>
+                        <ul class="guideline-list">
+                            <li>Say "delete" not "remove" or "trash"</li>
+                            <li>Say "sign in" not "log in" or "login"</li>
+                            <li>Say "choose" not "select" or "pick"</li>
+                            <li>Say "error" not "issue" or "problem"</li>
+                            <li>Say "you" not "user" or "customer"</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Copy Generator -->
+            <section class="section" id="generator">
+                <h2 class="section-title">AI Copy Generator</h2>
+                <p class="section-description">Generate or refine copy to match our tone of voice using AI.</p>
+                
+                <div class="copy-generator-card">
+                    <div class="generator-controls">
+                        <div class="form-group">
+                            <label class="form-label">What do you need?</label>
+                            <select id="copyType" class="form-input">
+                                <option value="generate">Generate new copy</option>
+                                <option value="refine">Refine existing copy</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" id="inputLabel">Describe what you need</label>
+                            <textarea 
+                                id="copyInput" 
+                                class="form-textarea" 
+                                rows="4" 
+                                placeholder="Example: A button that confirms deleting a user's account"></textarea>
+                        </div>
+
+                        <div class="form-group" id="contextGroup" style="display: none;">
+                            <label class="form-label">Additional context (optional)</label>
+                            <input 
+                                type="text" 
+                                id="copyContext" 
+                                class="form-input" 
+                                placeholder="Example: This appears in settings, high-stakes action">
+                        </div>
+
+                        <button id="generateBtn" class="btn btn-primary" style="width: 100%;">
+                            <i data-lucide="sparkles" style="width: 16px; height: 16px; margin-right: 8px;"></i>
+                            Generate Copy
+                        </button>
+                    </div>
+
+                    <div id="generatorOutput" class="generator-output" style="display: none;">
+                        <div class="output-header">
+                            <h4>Generated Copy</h4>
+                            <button id="copyBtn" class="btn btn-sm btn-ghost">
+                                <i data-lucide="copy" style="width: 14px; height: 14px; margin-right: 6px;"></i>
+                                Copy
+                            </button>
+                        </div>
+                        <div id="outputText" class="output-text"></div>
+                        <div class="output-actions">
+                            <button id="regenerateBtn" class="btn btn-sm btn-secondary">
+                                <i data-lucide="refresh-cw" style="width: 14px; height: 14px; margin-right: 6px;"></i>
+                                Try Again
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="generatorLoading" class="generator-loading" style="display: none;">
+                        <div class="spinner spinner-md"></div>
+                        <p>Generating copy...</p>
+                    </div>
+
+                    <div id="generatorError" class="generator-error" style="display: none;">
+                        <i data-lucide="alert-circle" style="width: 20px; height: 20px; color: var(--color-error);"></i>
+                        <p id="errorMessage">Something went wrong. Please try again.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Types -->
+            <section class="section" id="content-types">
+                <h2 class="section-title">Content Types</h2>
+                
+                <div class="content-types-grid">
+                    <div class="content-type-card">
+                        <h4>Button Labels</h4>
+                        <p class="content-description">Action-oriented, concise, clear outcome</p>
+                        <div class="content-examples">
+                            <span class="content-tag">Save changes</span>
+                            <span class="content-tag">Delete account</span>
+                            <span class="content-tag">Get started</span>
+                        </div>
+                    </div>
+
+                    <div class="content-type-card">
+                        <h4>Error Messages</h4>
+                        <p class="content-description">State the problem, suggest a solution</p>
+                        <div class="content-examples">
+                            <span class="content-tag">Email already exists. Try signing in instead.</span>
+                            <span class="content-tag">File too large. Max size is 10MB.</span>
+                        </div>
+                    </div>
+
+                    <div class="content-type-card">
+                        <h4>Success Messages</h4>
+                        <p class="content-description">Confirm the action, next step if needed</p>
+                        <div class="content-examples">
+                            <span class="content-tag">Settings saved</span>
+                            <span class="content-tag">Payment confirmed. Check your email for receipt.</span>
+                        </div>
+                    </div>
+
+                    <div class="content-type-card">
+                        <h4>Empty States</h4>
+                        <p class="content-description">Friendly, clear call to action</p>
+                        <div class="content-examples">
+                            <span class="content-tag">No messages yet. Start a conversation.</span>
+                            <span class="content-tag">Your inbox is empty. Nice work!</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Copy Generator Logic
+        const copyTypeSelect = document.getElementById('copyType');
+        const inputLabel = document.getElementById('inputLabel');
+        const copyInput = document.getElementById('copyInput');
+        const contextGroup = document.getElementById('contextGroup');
+        const generateBtn = document.getElementById('generateBtn');
+        const output = document.getElementById('generatorOutput');
+        const loading = document.getElementById('generatorLoading');
+        const error = document.getElementById('generatorError');
+        const outputText = document.getElementById('outputText');
+        const copyBtn = document.getElementById('copyBtn');
+        const regenerateBtn = document.getElementById('regenerateBtn');
+
+        // Update UI based on copy type
+        copyTypeSelect.addEventListener('change', (e) => {
+            if (e.target.value === 'generate') {
+                inputLabel.textContent = 'Describe what you need';
+                copyInput.placeholder = 'Example: A button that confirms deleting a user\'s account';
+                contextGroup.style.display = 'block';
+            } else {
+                inputLabel.textContent = 'Paste your copy to refine';
+                copyInput.placeholder = 'Example: Are you absolutely certain you would like to permanently delete your account?';
+                contextGroup.style.display = 'none';
+            }
+        });
+
+        // Generate copy
+        async function generateCopy() {
+            const type = copyTypeSelect.value;
+            const input = copyInput.value.trim();
+            const context = document.getElementById('copyContext').value.trim();
+
+            if (!input) {
+                showError('Please enter some text');
+                return;
+            }
+
+            // Hide previous states
+            output.style.display = 'none';
+            error.style.display = 'none';
+            loading.style.display = 'flex';
+
+            try {
+                const prompt = type === 'generate' 
+                    ? `Generate concise UI copy for: ${input}${context ? `. Context: ${context}` : ''}. Follow these rules: clear & direct, warm & human, confident & helpful, precise & thoughtful. Use sentence case. Be brief. Active voice. No jargon. Max 10-15 words. Return ONLY the copy text, nothing else.`
+                    : `Refine this UI copy to be: clear, direct, warm, confident, and thoughtful. Original: "${input}". Return ONLY the refined copy text, nothing else.`;
+
+                const response = await fetch('https://api.anthropic.com/v1/messages', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        model: 'claude-sonnet-4-20250514',
+                        max_tokens: 1000,
+                        messages: [{
+                            role: 'user',
+                            content: prompt
+                        }]
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to generate copy');
+                }
+
+                const data = await response.json();
+                const generatedText = data.content[0].text.trim();
+
+                // Show output
+                loading.style.display = 'none';
+                output.style.display = 'block';
+                outputText.textContent = generatedText;
+                lucide.createIcons();
+
+            } catch (err) {
+                console.error('Error:', err);
+                loading.style.display = 'none';
+                showError('Failed to generate copy. Please try again.');
+            }
+        }
+
+        function showError(message) {
+            error.style.display = 'flex';
+            document.getElementById('errorMessage').textContent = message;
+            lucide.createIcons();
+        }
+
+        // Event listeners
+        generateBtn.addEventListener('click', generateCopy);
+        regenerateBtn.addEventListener('click', generateCopy);
+
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(outputText.textContent);
+            const originalHTML = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i data-lucide="check" style="width: 14px; height: 14px; margin-right: 6px;"></i>Copied!';
+            lucide.createIcons();
+            setTimeout(() => {
+                copyBtn.innerHTML = originalHTML;
+                lucide.createIcons();
+            }, 2000);
+        });
+
+        // Allow Enter to submit (but not in textarea)
+        copyInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey && copyTypeSelect.value === 'refine') {
+                e.preventDefault();
+                generateCopy();
+            }
+        });
+    </script>
+</body>
+</html>
