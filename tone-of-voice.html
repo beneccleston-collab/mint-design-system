@@ -50,11 +50,11 @@
                         <p>We get to the point without unnecessary fluff. Every word earns its place.</p>
                         <div class="voice-example">
                             <div class="example-do">
-                                <span class="example-label">✓ Do</span>
+                                <span class="example-label"><i data-lucide="check" style="width: 14px; height: 14px; margin-right: 4px;"></i>Do</span>
                                 <p>"Save your progress"</p>
                             </div>
                             <div class="example-dont">
-                                <span class="example-label">✗ Don't</span>
+                                <span class="example-label"><i data-lucide="x" style="width: 14px; height: 14px; margin-right: 4px;"></i>Don't</span>
                                 <p>"Would you perhaps like to consider saving your progress at this time?"</p>
                             </div>
                         </div>
@@ -65,11 +65,11 @@
                         <p>Professional doesn't mean cold. We're approachable and friendly without being overly casual.</p>
                         <div class="voice-example">
                             <div class="example-do">
-                                <span class="example-label">✓ Do</span>
+                                <span class="example-label"><i data-lucide="check" style="width: 14px; height: 14px; margin-right: 4px;"></i>Do</span>
                                 <p>"We've updated your settings"</p>
                             </div>
                             <div class="example-dont">
-                                <span class="example-label">✗ Don't</span>
+                                <span class="example-label"><i data-lucide="x" style="width: 14px; height: 14px; margin-right: 4px;"></i>Don't</span>
                                 <p>"Settings modification operation completed successfully"</p>
                             </div>
                         </div>
@@ -80,11 +80,11 @@
                         <p>We guide without overwhelming. Clear next steps, no jargon, no apologies for doing our job.</p>
                         <div class="voice-example">
                             <div class="example-do">
-                                <span class="example-label">✓ Do</span>
+                                <span class="example-label"><i data-lucide="check" style="width: 14px; height: 14px; margin-right: 4px;"></i>Do</span>
                                 <p>"Choose a payment method"</p>
                             </div>
                             <div class="example-dont">
-                                <span class="example-label">✗ Don't</span>
+                                <span class="example-label"><i data-lucide="x" style="width: 14px; height: 14px; margin-right: 4px;"></i>Don't</span>
                                 <p>"Sorry, but we need you to select a payment method"</p>
                             </div>
                         </div>
@@ -95,11 +95,11 @@
                         <p>We choose words carefully. Specific over vague, active over passive.</p>
                         <div class="voice-example">
                             <div class="example-do">
-                                <span class="example-label">✓ Do</span>
+                                <span class="example-label"><i data-lucide="check" style="width: 14px; height: 14px; margin-right: 4px;"></i>Do</span>
                                 <p>"Delete this file?"</p>
                             </div>
                             <div class="example-dont">
-                                <span class="example-label">✗ Don't</span>
+                                <span class="example-label"><i data-lucide="x" style="width: 14px; height: 14px; margin-right: 4px;"></i>Don't</span>
                                 <p>"Are you sure you want to proceed with deletion?"</p>
                             </div>
                         </div>
@@ -305,6 +305,7 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        'anthropic-version': '2023-06-01'
                     },
                     body: JSON.stringify({
                         model: 'claude-sonnet-4-20250514',
@@ -317,7 +318,8 @@
                 });
 
                 if (!response.ok) {
-                    throw new Error('Failed to generate copy');
+                    const errorData = await response.json().catch(() => ({}));
+                    throw new Error(errorData.error?.message || `API error: ${response.status}`);
                 }
 
                 const data = await response.json();
@@ -332,7 +334,7 @@
             } catch (err) {
                 console.error('Error:', err);
                 loading.style.display = 'none';
-                showError('Failed to generate copy. Please try again.');
+                showError(err.message || 'Failed to generate copy. Please try again.');
             }
         }
 
