@@ -200,7 +200,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: var(--font-size-h1);
     line-height: var(--line-height-h1);
-    font-weight: var(--font-weight-bold);
+    font-weight: 800;
 }
 
 h2 {
@@ -794,7 +794,7 @@ code {
 
 .hero-title {
     font-size: 56px;
-    font-weight: var(--font-weight-bold);
+    font-weight: 800;
     margin-bottom: var(--space-4);
     background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
     -webkit-background-clip: text;
