@@ -3283,3 +3283,15 @@ code {
         grid-template-columns: 1fr;
     }
 }
+
+/* Text Links */
+.text-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    font-weight: var(--font-weight-medium);
+    transition: color var(--transition-fast);
+}
+
+.text-link:hover {
+    color: var(--color-primary-dark);
+}
