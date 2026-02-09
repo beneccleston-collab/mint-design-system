@@ -3295,3 +3295,376 @@ code {
 .text-link:hover {
     color: var(--color-primary-dark);
 }
+
+/* ============================================
+   HEADER AREA
+   ============================================ */
+.header-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-4);
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    min-height: 56px;
+}
+
+.header-back,
+.header-action {
+    background: none;
+    border: none;
+    padding: var(--space-2);
+    cursor: pointer;
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast);
+    min-width: 40px;
+    height: 40px;
+}
+
+.header-back:hover,
+.header-action:hover {
+    background-color: var(--color-surface-secondary);
+}
+
+.header-back i,
+.header-action i {
+    width: 20px;
+    height: 20px;
+}
+
+.header-title {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-semibold);
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+.header-action-primary {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+    padding: var(--space-2) var(--space-3);
+}
+
+/* ============================================
+   TAB BAR (BOTTOM NAVIGATION)
+   ============================================ */
+.tab-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--color-background);
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-2) 0;
+    min-height: 64px;
+}
+
+.tab-bar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-2);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+    min-width: 64px;
+}
+
+.tab-bar-item i {
+    width: 24px;
+    height: 24px;
+}
+
+.tab-bar-item span {
+    font-size: 11px;
+    font-weight: var(--font-weight-medium);
+}
+
+.tab-bar-item:hover {
+    color: var(--color-text-primary);
+}
+
+.tab-bar-item.active {
+    color: var(--color-primary);
+}
+
+/* ============================================
+   TABS
+   ============================================ */
+.tabs {
+    display: flex;
+    gap: var(--space-1);
+    border-bottom: 2px solid var(--color-border);
+    background-color: var(--color-background);
+}
+
+.tab {
+    padding: var(--space-3) var(--space-4);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.tab i {
+    width: 18px;
+    height: 18px;
+}
+
+.tab:hover {
+    color: var(--color-text-primary);
+    background-color: var(--color-surface-secondary);
+}
+
+.tab.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+.tabs-underline {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.tabs-underline .tab {
+    margin-bottom: -1px;
+}
+
+/* ============================================
+   SEGMENTED CONTROLLER
+   ============================================ */
+.segmented-controller {
+    display: inline-flex;
+    background-color: var(--color-surface-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-1);
+    gap: var(--space-1);
+}
+
+.segment {
+    padding: var(--space-2) var(--space-4);
+    background: none;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-medium);
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-width: 64px;
+    justify-content: center;
+}
+
+.segment i {
+    width: 18px;
+    height: 18px;
+}
+
+.segment:hover {
+    background-color: var(--color-surface-tertiary);
+}
+
+.segment.active {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   REVIEW PANEL
+   ============================================ */
+.review-panel {
+    background-color: var(--color-surface-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+}
+
+.review-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+}
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.review-avatar i {
+    width: 20px;
+    height: 20px;
+    color: white;
+}
+
+.review-meta {
+    flex: 1;
+}
+
+.review-meta h4 {
+    margin: 0 0 var(--space-1) 0;
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-semibold);
+}
+
+.review-rating {
+    display: flex;
+    gap: var(--space-1);
+}
+
+.review-rating i {
+    width: 14px;
+    height: 14px;
+    color: var(--color-text-tertiary);
+}
+
+.review-rating .star-filled {
+    color: #FFA500;
+    fill: #FFA500;
+}
+
+.review-date {
+    font-size: var(--font-size-caption);
+    color: var(--color-text-tertiary);
+}
+
+.review-content {
+    margin-bottom: var(--space-3);
+}
+
+.review-content p {
+    margin: 0;
+    color: var(--color-text-primary);
+    line-height: var(--line-height-body);
+}
+
+.review-actions {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.review-action-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: var(--font-size-body-small);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.review-action-btn i {
+    width: 14px;
+    height: 14px;
+}
+
+.review-action-btn:hover {
+    background-color: var(--color-surface-secondary);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* ============================================
+   LIST PANEL
+   ============================================ */
+.list-panel {
+    background-color: var(--color-surface-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.list-item:hover {
+    background-color: var(--color-surface-secondary);
+}
+
+.list-item-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-surface-secondary);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--color-primary);
+}
+
+.list-item-icon i {
+    width: 20px;
+    height: 20px;
+}
+
+.list-item-content {
+    flex: 1;
+}
+
+.list-item-content h4 {
+    margin: 0 0 var(--space-1) 0;
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+.list-item-content p {
+    margin: 0;
+    font-size: var(--font-size-body-small);
+    color: var(--color-text-secondary);
+}
+
+.list-item-chevron {
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-tertiary);
+    flex-shrink: 0;
+}
+
+.list-item-simple {
+    padding: var(--space-3) var(--space-4);
+}
+
+.list-item-simple span {
+    flex: 1;
+    font-size: var(--font-size-body);
+    color: var(--color-text-primary);
+}
