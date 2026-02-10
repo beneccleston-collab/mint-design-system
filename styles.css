@@ -3309,6 +3309,20 @@ code {
 /* ============================================
    HEADER AREA
    ============================================ */
+#header .component-example,
+#tab-bar .component-example,
+#tabs .component-example,
+#segmented-controller .component-example {
+    margin-bottom: var(--space-6);
+}
+
+#header .component-example:last-child,
+#tab-bar .component-example:last-child,
+#tabs .component-example:last-child,
+#segmented-controller .component-example:last-child {
+    margin-bottom: 0;
+}
+
 .header-area {
     display: flex;
     align-items: center;
